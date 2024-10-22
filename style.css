@@ -1,0 +1,47 @@
+/* Place your CSS styles in this file */
+body {background-color:grey;
+    border:5px solid blue;
+    border-radius:15px;
+    }
+    
+    h1 {
+        text-align: center;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: normal;
+        color:aqua;
+    }
+    
+    h4 {
+        text-align: center;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: normal;
+        color:aqua;
+    }
+    
+    marquee {
+        text-align: center;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: normal;
+        color:aqua;
+    }
+    
+    ui {list-style-type: none;
+    background-color: brown;
+    font-size: larger;
+    color: aqua;
+    padding-left: 20px;
+    border: 3px solid blue;
+    border-radius: 5px;
+    }
+    
+    li {display:inline;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    p {
+        text-align: justify;
+    }
