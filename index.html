@@ -1,27 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <title>JADAcorp</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="logo-container">
+            <img src="assets/logo.png" class="logo" alt="JADAcorp Logo">
+            <h1 class="header-title">JADAcorp</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="anis.html">Proses Design</a>
+            <a href="Piroduk.html">Product</a>
+            <a href="plinko.html">Games</a>
+        </nav>
+    </header>
 
-<html>
-    <head>
-        <meta charset="utf-8">
+    <main>
+        <section class="hero">
+            <div class="jumbotron">
+                <div class="hero-text">
+                    <h1>JADAcorp</h1>
+                    <h3>AKHLAK: Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif</h3>
+                    <p>Website created by: JADAcorp (Julio, Anis, Danang, Armand Corporation)</p>
+                    <p>Yang jadi baru produk sama home, sisanya masih diusahakan</p>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/logo.png" alt="Logo JADAcorp" class="jumbotron-image">
+                </div>
+            </div>
+        </section>
 
-        <title>JADA.corp</title>
+        <div class="divider"></div> <!-- Divider for elegant separation -->
 
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="styles.css">
-    </head>
+        <h2>Pemilik Perusahaan</h2>
+        <section class="packages-wrapper">
+            <div class="package-container team-member hidden">
+                <img src="assets/anis.jpeg" alt="Muhammad Anis Arsyad">
+                <h3>Muhammad Anis Arsyad (Mantan Gubernur Jakarta)</h3>
+                <p>Web Developer</p>
+                <button onclick="goToBooking()">Learn More</button>
+            </div>
+            <div class="package-container team-member hidden">
+                <img src="assets/danang.jpeg" alt="Danang Ahmad Al-Fahrizki">
+                <h3>Danang Ahmad Al-Fahrizki (Wakil Presiden 2024)</h3>
+                <p>Graphic Designer</p>
+                <button onclick="goToBooking()">Learn More</button>
+            </div>
+            <div class="package-container team-member hidden">
+                <img src="assets/julio.jpeg" alt="Juliodandi Daffa Tyaga Indrayadi">
+                <h3>Juliodandi Daffa Tyaga Indrayadi (Head Project)</h3>
+                <p>Application Developer</p>
+                <button onclick="goToBooking()">Learn More</button>
+            </div>
+            <div class="package-container team-member hidden">
+                <img src="assets/arman.jpeg" alt="Armand Ganteng Dewantoro">
+                <h3>Armand Ganteng Dewantoro</h3>
+                <p>Content Creator (Donatur Project)</p>
+                <button onclick="goToBooking()">Learn More</button>
+            </div>
+        </section>        
+    </main>
 
-    <body>
-        <ui>
-            <li><a href= "index.html">Home</a></li>
-            <li><a href= "anis.html">Process Design</a></li>
-            <li><a href= "Piroduk.html">Product</a></li>
-        </ui>
-        <h1>JADAcorp</h1>
-        <marquee>Made by Group 9 Class X-F</marquee>
-        <button onclick="window.location.href='https://www..com';"></button>
-        <h4>Kami Membuat Exchange Dollar Dari Rupiah, yang sangat membantu apabila kalian sedang ingin menukarkan Uang DOLLAR kalian ke RUPIAH
-        <!-- Load external JavaScript -->
-        <script src="scripts.js"></script>
-    </body>
+    <footer>
+        <h4>JADAcorp</h4>
+        <p>&copy; 2045 Indonesia Emas. Designed by JADAcorp Sigma, Made with ASUS ROG Flow X13</p>
+    </footer>
 
+    <script>
+        // Fungsi untuk mengaktifkan animasi saat elemen memasuki viewport
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamMembers = document.querySelectorAll('.team-member');
+    
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target); // Hanya animasi pertama kali saat masuk viewport
+                    }
+                });
+            }, { threshold: 0.2 });
+    
+            teamMembers.forEach(member => {
+                observer.observe(member);
+            });
+    
+            function toggleHeaderTransparency() {
+                const header = document.querySelector('header');
+                const scrollThreshold = 50; // Threshold untuk menerapkan transparansi
+    
+                if (window.scrollY > scrollThreshold) {
+                    header.classList.add('transparent');
+                } else {
+                    header.classList.remove('transparent');
+                }
+            }
+    
+            window.addEventListener('scroll', toggleHeaderTransparency);
+        });
+    </script>
+</body>
 </html>
