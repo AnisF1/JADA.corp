@@ -75,10 +75,6 @@ color: rgb(26, 22, 22);
 	font-weight: normal;
 	font-size: 15px;
 }
-.operator{
-}
-.number, .empty{
-}
 .number, .operator{
 	cursor: pointer;
 }
@@ -231,15 +227,6 @@ nav a:hover {
     right: 0;
 }
 
-.menu > li > a {
-    background: blue;
-    color: #fff;
-    display: block;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-}
-
 .menu ul {
     background: #ddd;
     height: 0;
@@ -249,12 +236,6 @@ nav a:hover {
     transition: all .5s ease;
     top: 35px;
     width: 100%;
-}
-
-.menu li:hover ul {
-    height: 200px;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .menu ul a {
@@ -301,20 +282,6 @@ h2 {
 }
 
 @media (max-width: 768px) {
-    .jumbotron {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 60px 20px;
-    }
-
-    .jumbotron-image {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .packages-wrapper {
-        padding: 40px 20px;
-    }
 
     .header-title {
         font-size: 20px;
@@ -355,15 +322,7 @@ h2 {
         font-size: 14px;
         margin: 0 10px;
     }
-
-    .jumbotron h1 {
-        font-size: 32px;
-    }
-
-    .jumbotron h3 {
-        font-size: 18px;
-    }
-
+	
     .package-container {
         max-width: 100%;
         margin: 10px;
