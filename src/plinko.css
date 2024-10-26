@@ -367,7 +367,7 @@ h2 {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .jumbotron {
+    .anis {
         flex-direction: column-reverse;
         text-align: center;
         padding: 60px 20px;
@@ -392,11 +392,15 @@ h2 {
         padding: 0 20px;
     }
 
-    .jumbotron h1 {
+    .anis h1 {
         font-size: 32px;
     }
 
-    .jumbotron h3 {
+    .anis h3 {
+        font-size: 18px;
+    }
+
+    .anis p {
         font-size: 18px;
     }
 
@@ -404,8 +408,4 @@ h2 {
         max-width: 100%;
         margin: 10px;
     }
-}
-
-.anis p {
-    color: #333;
 }

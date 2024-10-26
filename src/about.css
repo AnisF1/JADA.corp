@@ -243,35 +243,6 @@ nav {
     }
 }
 
-.anis {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 120px 40px;
-    color: white;
-    text-align: left;
-    margin-top: 80px;
-}
-
-.anis h1 {
-    font-size: 60px;
-    font-family: 'Lazybones', cursive;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    color: #F0C14B;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.anis h3 {
-    font-size: 24px;
-    margin-top: 10px;
-    color: #f39c12;
-}
-
-.anis p {
-    color: #f39c12;
-}
-
 /* Animation Keyframes */
 @keyframes fadeIn {
     from {
@@ -365,9 +336,38 @@ h2 {
     text-align: center;
 }
 
+.anis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 120px 40px;
+    color: white;
+    text-align: left;
+    margin-top: 80px;
+}
+
+.anis h1 {
+    font-size: 60px;
+    font-family: 'Lazybones', cursive;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    color: #F0C14B;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.anis h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #f39c12;
+}
+
+.anis p {
+    color: #f39c12;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
-    .jumbotron {
+    .anis {
         flex-direction: column-reverse;
         text-align: center;
         padding: 60px 20px;
@@ -392,11 +392,15 @@ h2 {
         padding: 0 20px;
     }
 
-    .jumbotron h1 {
+    .anis h1 {
         font-size: 32px;
     }
 
-    .jumbotron h3 {
+    .anis h3 {
+        font-size: 18px;
+    }
+
+    .anis p {
         font-size: 18px;
     }
 

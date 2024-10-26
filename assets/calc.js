@@ -202,6 +202,33 @@ for (var i = 0; i < operator.length; i++) {
     });
 }
 
+var number = document.getElementsByClassName("number");
+for(var i =0;i<number.length;i++){
+	number[i].addEventListener('click',function(){
+		var output=getOutput();
+		if(output[output.length-1]==".")
+		{
+			output=output.substr(output.length-2, 1)+output.substr(output.length-1, 1)+this.id;
+			printOutput(output);
+		}
+		else if(output[output.length-1]=="-"){
+			output=output.substr(0,output.length)+this.id;
+			printOutput(output);
+			printHistory(getHistory());
+		}
+		else{
+		var output=reverseNumberFormat(getOutput());
+		if(output!=NaN){ //if output is a number
+			output=output+this.id;
+			printOutput(output);
+		}
+	}
+	});
+}
+var d=new Date();
+document.getElementById("date").innerHTML=d;
+
+
 // Toggle menu hamburger
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
