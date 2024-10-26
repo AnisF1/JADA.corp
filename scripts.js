@@ -1,18 +1,44 @@
-const ball = document.getElementById('ball');
-const dropButton = document.getElementById('dropBall');
+// Toggle menu hamburger
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-function dropBall() {
-    ball.style.visibility = 'visible';
-    ball.style.transition = 'top 2s, left 2s';
-    let randomOffset = Math.random() * 100 - 50;  // Random horizontal movement
-    ball.style.top = '400px'; // Move ball to the bottom of the board
-    ball.style.left = `calc(50% + ${randomOffset}px)`;
-}
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
 
-// Attach event listener to the button
-dropButton.addEventListener('click', () => {
-    // Reset ball position
-    ball.style.top = '10px';
-    ball.style.left = '50%';
-    setTimeout(dropBall, 100); // Drop ball after resetting
+    // Animasi ketika elemen masuk viewport
+    const teamMembers = document.querySelectorAll('.team-member');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    teamMembers.forEach(member => {
+        observer.observe(member);
+    });
+
+    // Transparansi header saat scroll
+    function toggleHeaderTransparency() {
+        const header = document.querySelector('header');
+        const scrollThreshold = 50;
+
+        if (window.scrollY > scrollThreshold) {
+            header.classList.add('transparent');
+        } else {
+            header.classList.remove('transparent');
+        }
+    }
+
+    window.addEventListener('scroll', toggleHeaderTransparency);
 });
+
+// Fungsi goToBooking
+function goToBooking() {
+    window.location.href = "booking.html";
+}

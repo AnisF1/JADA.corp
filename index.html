@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/logo.png" />
     <title>JADAcorp</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
     <header class="sticky-header">
@@ -15,10 +15,17 @@
             <h1 class="header-title">JADAcorp</h1>
         </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="anis.html">Proses Design</a>
-            <a href="Piroduk.html">Product</a>
-            <a href="plinko.html">Games</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="anis.html">Proses Design</a>
+                <a href="Piroduk.html">Product</a>
+                <a href="plinko.html">Games</a>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </nav>
     </header>
 
@@ -29,6 +36,7 @@
                     <h1>JADAcorp</h1>
                     <h3>AKHLAK: Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif</h3>
                     <p>Website created by: JADAcorp (Julio, Anis, Danang, Armand Corporation)</p>
+                    <p>Disarankan melihat web ini menggunakan laptop</p>
                 </div>
                 <div class="hero-image">
                     <img src="assets/logo.png" alt="Logo JADAcorp" class="jumbotron-image">
@@ -36,16 +44,13 @@
             </div>
         </section>
 
-        <div class="divider"></div> <!-- Divider for elegant separation -->
+        <div class="divider"></div>
 
         <h2>Pemilik Perusahaan</h2>
         <section class="packages-wrapper">
             <div class="package-container team-member hidden">
                 <img src="assets/anis.jpeg" alt="Muhammad Anis Arsyad">
-                <h3>
-                    Muhammad Anis Arsyad<br>
-                    <span>(Mantan Gubernur DKI Jakarta)</span>
-                </h3>
+                <h3>Muhammad Anis Arsyad<br><span>(Mantan Gubernur DKI Jakarta)</span></h3>
                 <p>Web Developer</p>
                 <button onclick="goToBooking()">Learn More</button>
             </div>
@@ -63,13 +68,11 @@
             </div>
             <div class="package-container team-member hidden">
                 <img src="assets/arman.jpeg" alt="Armand Ganteng Dewantoro">
-                <h3>Armand Ganteng Dewantoro
-                    <span>(Orang Paling Ganteng)</span>
-                <h3>
+                <h3>Armand Ganteng Dewantoro <span>(Orang Paling Ganteng)</span></h3>
                 <p>Content Creator</p>
                 <button onclick="goToBooking()">Learn More</button>
             </div>
-        </section>        
+        </section>
     </main>
 
     <footer>
@@ -78,36 +81,50 @@
     </footer>
 
     <script>
-        // Fungsi untuk mengaktifkan animasi saat elemen memasuki viewport
-        document.addEventListener('DOMContentLoaded', () => {
+        // Toggle menu hamburger
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+
+            // Animasi ketika elemen masuk viewport
             const teamMembers = document.querySelectorAll('.team-member');
-    
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
-                        observer.unobserve(entry.target); // Hanya animasi pertama kali saat masuk viewport
+                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.2 });
-    
+
             teamMembers.forEach(member => {
                 observer.observe(member);
             });
-    
+
+            // Transparansi header saat scroll
             function toggleHeaderTransparency() {
                 const header = document.querySelector('header');
-                const scrollThreshold = 50; // Threshold untuk menerapkan transparansi
-    
+                const scrollThreshold = 50;
+
                 if (window.scrollY > scrollThreshold) {
                     header.classList.add('transparent');
                 } else {
                     header.classList.remove('transparent');
                 }
             }
-    
+
             window.addEventListener('scroll', toggleHeaderTransparency);
         });
+
+        // Fungsi goToBooking
+        function goToBooking() {
+            window.location.href = "booking.html";
+        }
     </script>
 </body>
 </html>
