@@ -12,7 +12,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header */
 header {
     background: linear-gradient(135deg, #1f1c2c, #928dab);
     color: white;
@@ -58,6 +57,18 @@ header.transparent {
     letter-spacing: 2px;
     color: #F0C14B;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(to right, #F0C14B, #f39c12, #F0C14B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shine 3s linear infinite, fadeInUp 1s ease-out;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Search Bar */
@@ -243,36 +254,6 @@ nav {
     }
 }
 
-/* Animation Keyframes */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideOut {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
 /* Button */
 button {
     background-color: #f39c12;
@@ -363,6 +344,68 @@ h2 {
 
 .anis p {
     color: #f39c12;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 200px;
+    }
+}
+
+@keyframes shine-effect {
+    100% {
+        left: 100%;
+    }
 }
 
 /* Media Queries */
