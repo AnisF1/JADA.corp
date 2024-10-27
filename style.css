@@ -58,6 +58,18 @@ header.transparent {
     letter-spacing: 2px;
     color: #F0C14B;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(to right, #F0C14B, #f39c12, #F0C14B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shine 3s linear infinite, fadeInUp 1s ease-out;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Search Bar */
@@ -293,18 +305,57 @@ nav {
     letter-spacing: 2px;
     color: #F0C14B;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(to right, #F0C14B, #f39c12, #F0C14B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shine 3s linear infinite, fadeInUp 1s ease-out;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .jumbotron h3 {
     font-size: 24px;
     margin-top: 10px;
     color: #f39c12;
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(to right, #F0C14B, #f39c12, #F0C14B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shine 3s linear infinite, fadeInUp 1s ease-out;
+    position: relative;
+    margin: 50px;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .jumbotron-image {
     width: 350px;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.jumbotron p{
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(to right, #8dceeb, #74b3db, #4bd4f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shine 3s linear infinite, fadeInUp 1s ease-out;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Packages Wrapper */
@@ -421,6 +472,117 @@ h2 {
     text-align: center;
 }
 
+/* Styling untuk container judul */
+.heading-container {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Styling untuk judul animasi */
+.animated-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(to right, #F0C14B, #f39c12, #F0C14B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shine 3s linear infinite, fadeInUp 1s ease-out;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Garis bawah animasi */
+.animated-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #F0C14B, #f39c12);
+    transform: translateX(-50%);
+    animation: expandLine 1s ease-out forwards;
+}
+
+.jumbotron h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #F0C14B, #f39c12);
+    transform: translateX(-50%);
+    animation: expandLine 1s ease-out forwards;
+}
+
+/* Efek shine pada background */
+.heading-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    animation: shine-effect 3s infinite;
+}
+
+/* Menyesuaikan spacing dengan section packages */
+.packages-wrapper {
+    margin-top: -40px;
+    position: relative;
+    z-index: 1;
+    padding-top: 60px; /* Menambah padding atas untuk spacing */
+}
+
+/* Keyframes untuk animasi */
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 200px;
+    }
+}
+
+@keyframes shine-effect {
+    100% {
+        left: 100%;
+    }
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .jumbotron {
@@ -441,6 +603,14 @@ h2 {
     .header-title {
         font-size: 20px;
     }
+
+    .animated-heading {
+        font-size: 36px;
+    }
+    
+    .animated-heading::after {
+        width: 150px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -459,5 +629,17 @@ h2 {
     .package-container {
         max-width: 100%;
         margin: 10px;
+    }
+
+    .animated-heading {
+        font-size: 28px;
+    }
+
+    .animated-heading::after {
+        width: 100px;
+    }
+
+    .heading-container {
+        padding: 40px 15px;
     }
 }
