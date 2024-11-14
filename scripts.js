@@ -76,8 +76,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-// Fungsi goToBooking
-function goToBooking() {
-    window.location.href = "booking.html";
-}
